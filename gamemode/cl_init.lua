@@ -4,6 +4,7 @@ include( "cl_calcview.lua" )
 include( "cl_playermodels.lua" )
 include( "cl_scoreboard.lua" )
 include( "cl_viewmodel.lua" )
+include( "player_class/player_hl2.lua" )
 
 
 -- Create data folders

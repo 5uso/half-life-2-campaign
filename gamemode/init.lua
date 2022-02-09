@@ -9,10 +9,12 @@ AddCSLuaFile( "cl_viewmodel.lua" )
 AddCSLuaFile( "sh_config.lua" )
 AddCSLuaFile( "sh_init.lua" )
 AddCSLuaFile( "sh_player.lua" )
+AddCSLuaFile( "player_class/player_hl2.lua" )
 
 -- Include the required lua files
 include( "sv_globalstates.lua" )
 include( "sh_init.lua" )
+include( "player_class/player_hl2.lua" )
 
 -- Include the configuration for this map
 if ( file.Exists( "half-life_2_campaign/gamemode/maps/"..game.GetMap()..".lua", "LUA" ) ) then
@@ -908,7 +910,7 @@ end
 -- Called when a player spawns 
 function GM:PlayerSpawn( ply )
 
-	player_manager.SetPlayerClass( ply, "player_default" )
+	player_manager.SetPlayerClass( ply, "player_hl2" )
 
 	if ( ( ( !hl2c_server_player_respawning:GetBool() && !FORCE_PLAYER_RESPAWNING ) || OVERRIDE_PLAYER_RESPAWNING ) && ( ply:Team() == TEAM_DEAD ) ) then
 	
